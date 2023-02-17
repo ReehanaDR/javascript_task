@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>Task Four</h2> 
+    <p>Storing the input data with Product Name and Product Price as an object into array, displaying that list data, calculating total Product Price using javascript.</p>
+    <br> <br>
+    
+    
+    <label for="name">name:</label>
+    <input type="text" name="name" id="i1">
+    <br><br>
+
+    <label for="price">price:</label>
+    <input type="text" name="price" id="i2">
+    <br><br>
+
+    <button id="button1" type="submit">submit</button>
+ 
+    <br><br>
+   
+
+
+   <h4>Output Results:</h4>
+   <br>
+   <h4>Sale Price:</h4>
+   <ul id="list">
+    
+
+   </ul>
+   <br><br>
+
+   <h4>Total Price:</h4>
+   <p id="total"> 
+
+   </p>
+  
+   
+    <script>
+
+     var arr=[]
+     $(document).ready(function(){
+       
+      $("#button1").click(function(){
+        var first = $("#i1").val();
+        var second =$("#i2").val();
+        arr.push(Number(second));
+        var result=  $("#list").append("<li>" + first + "-" + second + "</li>" );
+           
+        let b = arr.reduce(function(a,c){
+            return a+c
+        })
+
+        let sum=0
+        for(var i=0; i<arr.length; i++){
+            sum+=arr[i]
+        }
+        
+        var tprice= $("#total").text(sum);
+
+       
+       
+       
+        
+      
+
+      
+        })
+     })
+      
+
+    </script>
+</body>
+</html>
